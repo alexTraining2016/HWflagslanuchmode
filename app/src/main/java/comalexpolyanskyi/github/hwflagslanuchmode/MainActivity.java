@@ -18,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
     private final static String FINISH_ACTIVITY = "finish";
     private final static String NULL_ACTIVITY = "null";
     private final static String LAUNCH_KEY = "launch";
+    public static final String KEY_STORE = "key_store";
     private String lastActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("a", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(KEY_STORE, MODE_PRIVATE);
         lastActivity = sharedPreferences.getString(LAUNCH_KEY, NULL_ACTIVITY);
         launchActivity();
         Toast.makeText(this, lastActivity, Toast.LENGTH_LONG).show();

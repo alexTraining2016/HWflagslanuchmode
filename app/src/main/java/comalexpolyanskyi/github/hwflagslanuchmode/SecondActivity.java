@@ -10,6 +10,7 @@ import android.view.View;
 public class SecondActivity extends AppCompatActivity {
     private final static String SECOND_ACTIVITY = "second";
     private final static String LAUNCH_KEY = "launch";
+    public static final String KEY_STORE = "key_store";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("a", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(KEY_STORE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(LAUNCH_KEY, SECOND_ACTIVITY);
         editor.apply();
