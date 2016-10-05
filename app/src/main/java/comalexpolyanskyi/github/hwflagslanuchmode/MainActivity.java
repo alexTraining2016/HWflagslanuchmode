@@ -21,27 +21,22 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState != null){
             lastActivity = savedInstanceState.getString(LAUNCH_KEY);
         }
+        launchActivity();
     }
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        if(lastActivity.equals(NULL_ACTIVITY)) {
-            startActivity(new Intent(this, FirstActivity.class));
+    private void launchActivity(){
+        if(lastActivity.equals(NULL_ACTIVITY) || lastActivity.equals(FIRST_ACTIVITY)) {
             lastActivity = FIRST_ACTIVITY;
-        }
-        else if(lastActivity.equals(FIRST_ACTIVITY)){
-            startActivity(new Intent(this, SecondActivity.class));
-            lastActivity = SECOND_ACTIVITY;
+            startActivity(new Intent(this, FirstActivity.class));
         }else if(lastActivity.equals(SECOND_ACTIVITY)){
-            startActivity(new Intent(this, ThirdActivity.class));
             lastActivity = SECOND_ACTIVITY;
+            startActivity(new Intent(this, SecondActivity.class));
         }else if(lastActivity.equals(THIRD_ACTIVITY)){
-            startActivity(new Intent(this, FourthActivity.class));
-            lastActivity = SECOND_ACTIVITY;
+            lastActivity = THIRD_ACTIVITY;
+            startActivity(new Intent(this, ThirdActivity.class));
         }else if(lastActivity.equals(FOURTH_ACTIVITY)){
-            startActivity(new Intent(this, FifthActivity.class));
-            lastActivity = SECOND_ACTIVITY;
+            lastActivity = FOURTH_ACTIVITY;
+            startActivity(new Intent(this, FourthActivity.class));
         }else if(lastActivity.equals(FIFTH_ACTIVITY)){
             startActivity(new Intent(this, FinishActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|FLAG_ACTIVITY_NEW_TASK));
         }

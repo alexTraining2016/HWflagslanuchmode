@@ -14,10 +14,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/first" />
+        android:text="@string/third" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/third"
+        android:text="@string/next"
         android:onClick="onClickNext"/>
 </LinearLayout>

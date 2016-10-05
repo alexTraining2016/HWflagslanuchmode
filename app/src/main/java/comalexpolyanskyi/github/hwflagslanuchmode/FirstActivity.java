@@ -6,9 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/**
- * Created by Алексей on 03.10.2016.
- */
 
 public class FirstActivity extends AppCompatActivity {
     private final static String FIRST_ACTIVITY = "first";
@@ -17,6 +14,11 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
         MainActivity.lastActivity = FIRST_ACTIVITY;
     }
 

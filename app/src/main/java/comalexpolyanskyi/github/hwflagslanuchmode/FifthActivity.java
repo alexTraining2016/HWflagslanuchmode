@@ -8,18 +8,19 @@ import android.view.View;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
-/**
- * Created by Алексей on 03.10.2016.
- */
-
 public class FifthActivity extends AppCompatActivity {
-    private final static String SECOND_ACTIVITY = "second";
+    private final static String FIFTH_ACTIVITY = "fifth";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        MainActivity.lastActivity = SECOND_ACTIVITY;
+        setContentView(R.layout.activity_fifth);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        MainActivity.lastActivity = FIFTH_ACTIVITY;
     }
 
     public void onClickNext(View view) {

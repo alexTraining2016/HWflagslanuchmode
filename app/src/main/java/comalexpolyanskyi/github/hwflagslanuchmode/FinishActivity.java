@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-/**
- * Created by Алексей on 03.10.2016.
- */
 
 public class FinishActivity extends AppCompatActivity {
     @Override
