@@ -24,10 +24,10 @@ public class FourthActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("a", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(LAUNCH_KEY, FOURTH_ACTIVITY);
-        editor.commit();
+        editor.apply();
     }
 
     public void onClickNext(View view) {

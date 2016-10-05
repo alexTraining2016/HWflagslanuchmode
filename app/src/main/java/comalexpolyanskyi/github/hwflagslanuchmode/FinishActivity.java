@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 
 public class FinishActivity extends AppCompatActivity {
@@ -20,8 +19,7 @@ public class FinishActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i("1232", "dsadsa");
-        SharedPreferences sharedPreferences = this.getPreferences(MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("a", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(LAUNCH_KEY, FINISH_ACTIVITY);
         editor.apply();
