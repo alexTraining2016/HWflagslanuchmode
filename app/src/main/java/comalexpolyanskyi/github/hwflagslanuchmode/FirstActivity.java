@@ -1,6 +1,7 @@
 package comalexpolyanskyi.github.hwflagslanuchmode;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 
 public class FirstActivity extends AppCompatActivity {
     private final static String FIRST_ACTIVITY = "first";
+    private final static String LAUNCH_KEY = "launch";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -17,9 +19,12 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        MainActivity.lastActivity = FIRST_ACTIVITY;
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(LAUNCH_KEY, FIRST_ACTIVITY);
+        editor.commit();
     }
 
     public void onClickNext(View view) {
