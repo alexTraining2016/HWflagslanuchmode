@@ -31,6 +31,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/avatar"
                 android:scaleType="centerCrop"/>
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,10 +58,8 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/activity_main_content" />
-
 </android.support.design.widget.CoordinatorLayout>
