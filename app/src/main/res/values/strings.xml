@@ -4,4 +4,11 @@
     <string name="action_settings">Settings</string>
     <string name="online_str">online</string>
     <string name="change_satatus_str">Изменить статус</string>
+    <string name="friends_str">184 друга</string>
+    <string name="no_friends_str">115 подпосчиков</string>
+    <string name="city_str">Город: Гродно</string>
+    <string name="edu">ГрГу им. Янки Купалы</string>
+    <string name="show_info_str">Показать информацию</string>
+    <string name="new_record">Новая запись</string>
+    <string name="photo">Фотография</string>
 </resources>

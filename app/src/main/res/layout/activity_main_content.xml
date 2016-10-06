@@ -3,27 +3,93 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorAccent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="comalexpolyanskyi.github.hwflagslanuchmode.MainActivity"
     tools:showIn="@layout/activity_main">
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_gravity="start"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.9"
-        app:srcCompat="@drawable/ic_chat_bubble_black_24dp"/>
-    <TextView
-        android:paddingStart="16dp"
-        android:text="@string/change_satatus_str"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"/>
-</LinearLayout>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle"
+            android:orientation="vertical">
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/change_satatus_str"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                style="@style/VectorImageTextViewStyleClickable"
+                app:leftIcon ="@drawable/ic_chat_bubble_black_24dp" />
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/friends_str"
+                style="@style/VectorImageTextViewStyleClickable"
+                app:leftIcon ="@drawable/ic_group_black_24dp" />
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/no_friends_str"
+                style="@style/VectorImageTextViewStyleClickable"
+                app:leftIcon ="@drawable/ic_wifi_black_24dp" />
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/city_str"
+                style="@style/VectorImageTextViewStyle"
+                app:leftIcon ="@drawable/ic_home_black_24dp" />
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/edu"
+                style="@style/VectorImageTextViewStyle"
+                app:leftIcon ="@drawable/ic_school_black_24dp" />
 
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/show_info_str"
+                style="@style/VectorImageTextViewStyleClickableV2"
+                app:leftIcon ="@drawable/ic_dots" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="6dip"
+            android:id="@+id/mesandphotobtn"
+            android:layout_below="@id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardViewStyle"
+            android:orientation="horizontal">
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/new_record"
+                style="@style/VectorImageTextViewStyleClickable"
+                app:leftIcon ="@drawable/ic_edit_black_24dp" />
+            <View
+                android:layout_width="1dp"
+                android:background="@color/colorAccent"
+                android:layout_height="match_parent"/>
+            <comalexpolyanskyi.github.hwflagslanuchmode.view.VectorImageTextView
+                android:paddingLeft="16dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/activity_horizontal_margin"
+                android:text="@string/photo"
+                style="@style/VectorImageTextViewStyleClickable"
+                app:leftIcon ="@drawable/ic_party_mode_24dp" />
+        </LinearLayout>
+    </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
