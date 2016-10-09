@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import comalexpolyanskyi.github.hwflagslanuchmode.R;
 
-
 public class VectorImageTextView extends TextView {
 
     public VectorImageTextView(final Context context) {
@@ -62,6 +61,5 @@ public class VectorImageTextView extends TextView {
             a.recycle();
         }
     }
-
 
 }
