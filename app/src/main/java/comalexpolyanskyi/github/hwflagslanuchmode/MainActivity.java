@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Alex Alexeev");
         SomeApi api =  new SomeApi();
+        String debug;
+        if(BuildConfig.BETA){
+            debug = BuildConfig.SOME_VARIABLE;
+        }
         initMessageBtn(api);
     }
 

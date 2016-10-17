@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
+
+    def someVariable = '"some value"'
+    def someVariableProd = '"some value production"'
     defaultConfig {
         applicationId "comalexpolyanskyi.github.hwflagslanuchmode"
         minSdkVersion 17
@@ -12,6 +15,33 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true;
     }
+
+    flavorDimensions "env", "language"
+
+    productFlavors {
+        beta {
+            dimension "env"
+            buildConfigField "String", "SOME_VARIABLE", someVariable
+            buildConfigField "boolean", "BETA", "true"
+        }
+
+        production {
+            dimension "env"
+            buildConfigField "boolean", "BETA", "false"
+            buildConfigField "String", "SOME_VARIABLE", someVariableProd
+        }
+
+        ru {
+            applicationId "com.example.mikhail_sianko.myapplication.ru"+versionCode;
+            dimension "language"
+        }
+
+        en {
+            applicationId "com.example.mikhail_sianko.myapplication.en"+versionCode;
+            dimension "language"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
